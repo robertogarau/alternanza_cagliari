@@ -3,11 +3,10 @@
 <head>
 	<title>Market Express</title>
 	<meta charset="UTF-8">
-	<!-- Favicon -->
 	<link href="titleimg.png" rel="shortcut icon"/>
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+	<!-- Google Font
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">-->
 
 
 	<!-- Stylesheets -->
@@ -19,7 +18,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
 	<link rel="stylesheet" href="css/animate.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
-
+	<link href="css/css.css" rel="stylesheet"/>
 
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -38,11 +37,13 @@
 		<div class="header-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-2 text-center text-lg-left">
+					<div id="logochange">
+						<div class="col-lg-2 text-center text-lg-left">
 						<!-- logo -->
 						<a href="./index1.html" class="site-logo">
-							<img src="logo.png" alt="">
+							<img src="resized.png" alt="">
 						</a>
+					</div>
 					</div>
 					<div class="col-xl-6 col-lg-5">
 						<form class="header-search-form">
@@ -73,7 +74,15 @@
 				<!-- menu -->
 				<ul class="main-menu">
 					<li><a href="#">Indirizzo Consegna</a></li>
-					<li><a href="#">Categoria</a></li>
+					<li><a href="#">Categoria</a>
+							<ul class="sub-menu">
+								<li><a href="#">Categoria 1</a></li>
+								<li><a href="#">Categoria 2</a></li>
+								<li><a href="#">Categoria 3</a></li>
+								<li><a href="#">Categoria 4</a></li>
+								<li><a href="#">Categoria 5</a></li>
+							</ul>
+						</li>
 					<li><a href="#">Offerte</a>
 						<ul class="sub-menu">
 							<li><a href="#">Categoria 1</a></li>
@@ -85,14 +94,13 @@
 					</li>
 					<li><a href="#">Pages</a>
 						<ul class="sub-menu">
-							<li><a href="./product.html">Product Page</a></li>
-							<li><a href="./category.html">Category Page</a></li>
-							<li><a href="./cart.html">Cart Page</a></li>
-							<li><a href="./checkout.html">Checkout Page</a></li>
-							<li><a href="./contact.html">Contact Page</a></li>
+							<li><a href="./product.html">Chi Siamo</a></li>
+							<li><a href="./category.html">Tracker Page</a></li>
+							<li><a href="./cart.html">Shipping</a></li>
+							<li><a href="./checkout.html">Partners</a></li>
+							<li><a href="./contact.html">Support</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Blog</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -102,8 +110,8 @@
 	<section class="footer-section">
 		<div class="container">
 			<div class="footer-logo text-center">
-				<a href="index.html"><img src="./img/logo-light.png" alt=""></a>
-			</div>
+				<a href="index.html"><img src=" 	" alt=""></a> <!--MANCA LOGO-->
+		</div>
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
@@ -125,20 +133,15 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
-					<div class="footer-widget contact-widget">
-						<h2>Questions</h2>
-						<div class="con-info">
-							<span>C.</span>
-							<p>Nome società</p>
-						</div>
-						<div class="con-info">
-							<span>B.</span>
-							<p>I.I.S Michele Giua</p>
-						</div>
-						<div class="con-info">
-							<span>E.</span>
-							<p>EMAIL</p>
-						</div>
+					<div class="footer-widget about-widget">
+						<h2>Domande</h2>
+						<ul>
+							<li><a href="">Chi Siamo</a></li>
+							<li><a href="">Track Orders</a></li>
+							<li><a href="">Shipping</a></li>
+							<li><a href="">Partners</a></li>
+							<li><a href="">Support</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>

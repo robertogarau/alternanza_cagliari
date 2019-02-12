@@ -1119,14 +1119,15 @@ ol {
 
 .contact-widget .con-info span {
 	float: left;
-	color: #f51167;
+	color: #21d156;
 	margin-right: 15px;
 	overflow: hidden;
 }
 
 .social-links-warp {
 	border-top: 2px solid #3b3535;
-	padding: 46px 0;
+	padding: 45px 0; /*46px*/
+	padding-left:15%;
 }
 
 .social-links a {
