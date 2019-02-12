@@ -1,9 +1,16 @@
 .main-navbar{
   padding-left: 15%;
 }
-.main-navbar{
-  color: #16d156;
+.social-links-warp{
+padding-left: 48%;
 }
-.foot{
-  color: #16d156;
+#logochange{
+  margin-top: 8px;
+  margin-right: 10px;
+}
+h4{
+  font-style: oblique;
+}
+.user-panel{
+  padding-top:10px;
 }
