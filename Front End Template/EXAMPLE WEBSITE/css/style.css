@@ -428,7 +428,7 @@ ol {
 	font-size: 10px;
 	font-weight: 700;
 	color: #fff;
-	background: #f51167;
+	background: #16d156;
 	line-height: 1;
 	text-transform: uppercase;
 	left: calc(50% - 21px);
@@ -472,13 +472,13 @@ ol {
 
 .main-menu .sub-menu li a {
 	display: block;
-	color: #000;
+	color: #000000;
 	margin-right: 0;
 	padding: 8px 20px;
 }
 
 .main-menu .sub-menu li a:hover {
-	color: #f51167;
+	color: #16d156;
 }
 
 .nav-switch {
@@ -1048,7 +1048,7 @@ ol {
 	height: 5px;
 	left: 0;
 	top: 8px;
-	border: 1px solid #ec105a;
+	border: 1px solid #16d156;
 	border-radius: 50%;
 	-webkit-transition: all 0.2s;
 	-o-transition: all 0.2s;
@@ -1056,14 +1056,13 @@ ol {
 }
 
 .footer-widget ul li a:hover {
-	color: #fff;
+	color: #16d156;
 }
 
 .footer-widget ul li a:hover:after {
 	width: 7px;
 	height: 7px;
 	top: 6px;
-	background: #ec105a;
 }
 
 .fw-latest-post-widget .lp-item {
@@ -1253,7 +1252,7 @@ ol {
 	height: 9px;
 	left: 0;
 	top: 13px;
-	border: 1px solid #f51167;
+	border: 1px solid #16d156;
 	border-radius: 50%;
 }
 
@@ -1262,7 +1261,7 @@ ol {
 }
 
 .category-menu li a:hover:after {
-	background: #f51167;
+	background: #16d156;
 }
 
 .category-menu li a:last-child a {
