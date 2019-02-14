@@ -14,7 +14,3 @@ h4{
 .user-panel{
   padding-top:10px;
 }
-.submenu ul li:hover>ul {
-  display: inherit;
-  transition: all .3s ease;
-}
