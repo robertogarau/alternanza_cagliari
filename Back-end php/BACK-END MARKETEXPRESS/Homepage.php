@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+	<title>Home | Market Express</title>
+	<meta charset="UTF-8">
+	<link href="titleimg.png" rel="shortcut icon"/>
+	<!-- Google Font
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">-->
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/slicknav.min.css"/>
+	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link href="css/css.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<!-- Header section -->
+	<div id="header">
+	<header class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div id="scrittaheader">
+						<!-- logo -->
+						<a href="./index1.html" class="site-logo">
+							<h4>Market Express</h4>
+						</a>
+						<i class="fas fa-shipping-fast"></i>
+					</div>
+					<div class="col-xl-5 col-lg-5">
+						<form class="header-search-form">
+							<input type="text" placeholder="Cerca Prodotti">
+							<button><i class="flaticon-search"></i></button>
+						</form>
+					</div>
+					<div class="col-xl-4 col-lg-4">
+						<div class="user-panel">
+							<div class="up-item">
+								<i class="fas fa-user"></i>
+								<a href="login.html">Accedi</a> o <a href="login.html">Crea un Account</a>
+							</div>
+							<div class="up-item">
+								<div class="shopping-card">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+								<a href="#">Carrello</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<nav class="main-navbar">
+			<div class="container">
+				<!-- menu -->
+				<ul class="main-menu">
+					<li><a href="#">Indirizzo Consegna</a></li>
+					<li><a href="#">Prodotti</a>
+							<ul class="sub-menu">
+								<li><a href="#">Pasta, Riso, Farina</a></li>
+								<li><a href="#">Dispensa e Scatolame</a></li>
+								<li><a href="#">Dolci e Colazione</a></li>
+								<li><a href="#">Acqua e Bevande</a></li>
+								<li><a href="#">Vini, Birra e Liquori</a></li>
+								<li><a href="#">Surgelati e Gelati</a></li>
+								<li><a href="#">Carne e Pesce Fresco</a></li>
+								<li><a href="#">Frutta e Verdura</a></li>
+								<li><a href="#">Pane e Pasticceria</a></li>
+								<li><a href="#">Prodotti Freschi</a></li>
+						</ul>
+						</li>
+					<li><a href="#">Altro...</a>
+						<ul class="sub-menu">
+							<li><a href="./product.html">Chi Siamo</a></li>
+							<li><a href="./category.html">Tracker Page</a></li>
+							<li><a href="./cart.html">Consegna</a></li>
+							<li><a href="./checkout.html">Partners</a></li>
+							<li><a href="./contact.html">Support</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Header section end -->
+	<div id="middle">
+		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" class="carousel slide" data-interval="5000" id="myCarousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="500">
+      <img src="prodocnad.jpg" class="d-block w-100" alt="..." width="700" height="700">
+    </div>
+    <div class="carousel-item">
+      <img src="auchan.PNG" class="d-block w-100" alt="..."  width="700" height="700">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..."  width="700" height="700">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Precedente</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Prossima</span>
+  </a>
+</div>
+	</div>
+	<!-- Footer section -->
+	<section class="footer-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="footer-widget about widget">
+						<h2>About</h2>
+						<p>Progetto Creato dagli studenti del Corso di ASL Michele Giua</p>
+						<img src="img/cards.png" alt="">
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="footer-widget about-widget">
+						<h2>Domande</h2>
+						<ul>
+							<li><a href="">Chi Siamo</a></li>
+							<li><a href="">Track Orders</a></li>
+							<li><a href="">Shipping</a></li>
+							<li><a href="">Partners</a></li>
+							<li><a href="">Support</a></li>
+						</ul>
+					</div>
+				</div>
+				</div>
+		</div>
+		<div class="social-links-warp">
+			<div class="container">
+				<div class="social-links">
+					<a href="https://github.com/robertogarau/alternanza_cagliari" class="github"><i class="fab fa-github"></i><span>GITHUB</span></a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- Footer section end -->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
