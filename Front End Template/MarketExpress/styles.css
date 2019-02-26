@@ -4,7 +4,7 @@
   }
   h3, h4 {
     margin: 10px 0 30px 0;
-    letter-spacing: 10px;      
+    letter-spacing: 10px;
     font-size: 20px;
     color: #111;
   }
@@ -23,7 +23,7 @@
   }
   .carousel-inner img {
     width: 100%; /* Set width to 100% */
-    
+
     margin: auto;
   }
   .carousel-caption h3 {
@@ -81,7 +81,7 @@
   .nav-tabs li a {
     color: #777;
   }
-  
+
   .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
@@ -91,7 +91,7 @@
     letter-spacing: 4px;
     opacity: 0.9;
   }
-  .navbar li a, .navbar .navbar-brand { 
+  .navbar li a, .navbar .navbar-brand {
     color: #d5d5d5 !important;
   }
   .navbar-nav li a:hover {
@@ -125,7 +125,7 @@
   footer a:hover {
     color: #777;
     text-decoration: none;
-  }  
+  }
   .form-control {
     border-radius: 0;
   }
@@ -133,5 +133,5 @@
     resize: none;
   }
   .social{
-    margin: 20px;      
+    margin: 20px;
       }
