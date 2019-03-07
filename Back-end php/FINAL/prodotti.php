@@ -1,4 +1,4 @@
-<?php include 'function.php'; ?>
+<?php include 'functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,31 +90,32 @@
 <div id="band" class="container text-center">
   <div class="row">
   <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
+      <a href="prodotti.php?cat=Frutta">
         <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
       </a>
       <p>FRUTTA E VERDURA</p>
     </div>
   <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
+      <a href="prodotti.php?cat=Snack">
         <img src="img/snack.jpg" class="img-circle person" alt="Categoria"
              width="255" height="255">
       </a>
       <p>SNACK</p>
     </div>
     <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
+      <a href="prodotti.php?cat=Bibite">
         <img src="img/Bibite.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
       </a>
         <p>BIBITE</p>
     </div>
   <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
+      <a href="prodotti.php?cat=Carni">
         <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
              width="255" height="255">
       </a>
       <p>CARNE</p>
-    </div>
+  </div>
+
   </div>
 </div>
 
@@ -123,7 +124,11 @@
   <div id="band" class="container text-center">
     <div class="row">
       <?php
-        
+        $result=categoria($categoria);
+        while($row=mysqli_fetch_array($result))
+        {
+          echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
+        }
 
       ?>
 
@@ -133,72 +138,7 @@
 <!--PRODOTTI-->
 
 
-    <!--Register-->
-    <div class="container text-center">
-    <form class="well form-horizontal" action=" " method="post"  id="registration_form">
-<fieldset>
-<!-- Form Name -->
-<legend><center><h2><b>REGISTRATI</b></h2></center></legend><br>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Nome</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
 
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Cognome</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="regemail" placeholder="E-Mail Address" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Telefono</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(+39)" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" >Password</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="regpassword" placeholder="Password" class="form-control"  type="password">
-    </div>
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4"><br>
-    <button type="submit" class="btn btn-warning" >REGISTRATI</button>
-  </div>
-</div>
-</fieldset>
-</form>
 </div>
 <footer id="contact">
         <div class="container text-center">
