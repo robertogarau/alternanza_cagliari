@@ -127,7 +127,13 @@
         $result=categoria($categoria);
         while($row=mysqli_fetch_array($result))
         {
-          echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
+          echo("<div class=\"col-sm-3\">
+          <a href=\"#demo\" data-toggle=\collapse\">
+              <img src=\"img/snack.jpg\" class=\"img-rounded\" alt=\"item1\" width=\"155\" height=\"155\">
+          </a>
+          <p>$row[1]</p>
+      </div>");
+          // echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
         }
 
       ?>
