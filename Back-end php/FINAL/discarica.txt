@@ -1,0 +1,8 @@
+oggetto
+
+<div class="col-sm-3">
+    <a href="#demo" data-toggle="collapse">
+        <img src="img/snack.jpg" class="img-rounded" alt="item1" width="155" height="155">
+    </a>
+    <p>Prezzo1</p>
+</div>
