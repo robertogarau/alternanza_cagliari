@@ -88,40 +88,42 @@
 <!-- Container (The Products Section) -->
 <div id="band" class="container text-center">
   <div class="row">
-  <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
-        <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
-      </a>
-      <p>FRUTTA E VERDURA</p>
-    </div>
-  <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
-        <img src="img/snack.jpg" class="img-circle person" alt="Categoria"
-             width="255" height="255">
-      </a>
-      <p>SNACK</p>
-    </div>
     <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
-        <img src="img/Bibite.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
-      </a>
-        <p>BIBITE</p>
+        <a href="#demo" data-toggle="collapse">
+          <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
+        </a>
+        <p>FRUTTA E VERDURA</p>
+      </div>
+    <div class="col-sm-3">
+        <a href="#demo" data-toggle="collapse">
+          <img src="img/snack.jpg" class="img-circle person" alt="Categoria"
+               width="255" height="255">
+        </a>
+        <p>SNACK</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="#demo" data-toggle="collapse">
+          <img src="img/Bibite.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
+        </a>
+          <p>BIBITE</p>
+      </div>
+    <div class="col-sm-3">
+        <a href="#demo" data-toggle="collapse">
+          <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
+               width="255" height="255">
+        </a>
+        <p>CARNE</p>
+      </div>
     </div>
-  <div class="col-sm-3">
-      <a href="#demo" data-toggle="collapse">
-        <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
-             width="255" height="255">
-      </a>
-      <p>CARNE</p>
-    </div>
-  </div>
 </div>
 
 <!--PRODOTTI-->
-    <center><h1>NOME CATEGORIA RICHIESTO</h1></center>
-    <div id="band" class="container text-center">
+
+    <div id="band" class="container text-center containercustom">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-8">
+          <center><h1>NOME CATEGORIA RICHIESTO</h1></center>
+              <div class="col-sm-3">
             <a href="#demo" data-toggle="collapse">
               <img src="img/snack.jpg" class="img-rounded" alt="item1"
                    width="155" height="155">
@@ -177,7 +179,63 @@
                                         </a>
                                         <p>Prezzo8</p>
                                       </div>
+        </div>
+        <div class="col-sm-4">
+              <div id="lista-prodotti-titolo">
+                <center><h2>Lista Della Spesa</center></h2>
+              </div>
+              <div id="lista-prodotti-empty" class="card" style="display:none">
+                <center><h3>Seleziona Prodotti</center></h3>
+              </div>
+              <div id="lista-prodotti-container">
+                    <div class="card">
+                                  <table class="table table-hover shopping-cart-wrap">
+                                  <thead class="text-muted">
+                                  <tr>
+                                  <th scope="col">Prodotto</th>
+                                  <th scope="col" width="120">Quantità</th>
 
+                                  <th scope="col" width="200" class="text-right">Azione</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                  <td>
+                                  <figure class="media">
+                                  <figcaption class="media-body textalignleft">
+                                    <h6 class="title text-truncate">Product name goes here </h6>
+                                    <dl class="param param-inline small">
+                                      <dt>Categoria: </dt>
+                                      <dd>XXL</dd>
+                                    </dl>
+                                  </figcaption>
+                                  </figure>
+                                  </td>
+                                  <td>
+                                    <select class="form-control">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+                                      <option>8</option>
+                                      <option>9</option>
+                                      <option>10</option>
+                                    </select>
+                                  </td>
+                                  <td class="text-right">
+                                  <a href="" class="btn btn-outline-danger"> × Rimuovi</a>
+                                  </td>
+                                  </tr>
+                                  </tbody>
+                                  </table>
+                    </div> <!-- card.// -->
+                    <div id="buttoncheckout">
+                      <a href="" class="btn btn-outline-danger"> Cerca Offerta > </a>
+                    </div>
+            </div>
     </div>
     </div>
 
@@ -186,6 +244,7 @@
 
     <!--Register-->
     <div class="container text-center">
+
     <form class="well form-horizontal" action=" " method="post"  id="registration_form">
 <fieldset>
 <!-- Form Name -->
@@ -273,6 +332,5 @@ $(document).ready(function(){
 })
 </script>
 
-<script>alert('Pagina di PROVA!, Da modificare *Nome Categoria richiesto* ');</script>
 </body>
 </html>
