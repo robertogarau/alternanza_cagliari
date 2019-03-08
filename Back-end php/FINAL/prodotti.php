@@ -1,4 +1,19 @@
-<?php include 'functions.php'; ?>
+<?php include 'functions.php';
+    session_start();
+      $array=array();
+      $_SESSION['cart']=$array;
+      if($_GET){
+        if(isset($_POST['add'])){
+            $value=$_POST['add'];
+            bt_add($value,$array);
+        }
+    }
+    function bt_add($id,$a){
+      array_push($a,$id);
+      $_SESSION['cart']=$a;
+      exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,11 +149,18 @@
               <img src=\"img/snack.jpg\" class=\"img-rounded\" alt=\"item1\" width=\"155\" height=\"155\">
           </a>
           <p>$row[1]</p>
-      </div>");
+          <p>$row[0]</p>
+          <form method=\"post\" action=\"\"> 
+          <button type=\"submit\" class=\"btn btn-primary\" name=\"add\" value=\"$row[0]\">Aggiungi</button>
+          </form>
+          </div>");
           // echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
         }
-
+          
       ?> 
+        <div class="col-sm-3">
+          <?php  echo("$array[0]");?>
+        </div>
         </div>
         <div class="col-sm-4 lista-spesa-container bordo">
               <div id="lista-prodotti-titolo">
