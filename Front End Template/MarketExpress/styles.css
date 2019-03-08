@@ -228,3 +228,6 @@ var {
   padding-top:25px;
   padding-bottom: 30px;
 }
+.bordo{
+  border: 1px solid #e3e3e3;
+}
