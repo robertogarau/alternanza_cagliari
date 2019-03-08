@@ -23,11 +23,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">MarketExpress</a>
+      <a class="navbar-brand" href="index.html">MarketExpress</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">HOME</a></li>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="#myPage">PRODOTTI</a></li>
         <li><a href="" data-toggle="modal" data-target="#AccessModal">ACCEDI</a></li>
           <li><a href="#registration_form">REGISTRATI</a></li>
         <li><a href="#contact">CONTATTACI</a></li>
@@ -76,12 +77,12 @@
         <img src="img/pane.jpg" alt="pane">
       </div>
 
-      <div class="item">
-        <img src="img/verdura.jpg" alt="verdura">
-      </div>
-      <div class="item">
-        <img src="img/carne.jpg" alt="carne">
-    </div>
+                <div class="item">
+                  <img src="img/verdura.jpg" alt="verdura">
+                </div>
+                <div class="item">
+                  <img src="img/carne.jpg" alt="carne">
+              </div>
   </div>
   </div>
 
@@ -89,41 +90,42 @@
 <!-- Container (The Products Section) -->
 <div id="band" class="container text-center">
   <div class="row">
-  <div class="col-sm-3">
-      <a href="prodotti.php?cat=Frutta">
-        <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
-      </a>
-      <p>FRUTTA E VERDURA</p>
-    </div>
-  <div class="col-sm-3">
-      <a href="prodotti.php?cat=Snack">
-        <img src="img/snack.jpg" class="img-circle person" alt="Categoria"
-             width="255" height="255">
-      </a>
-      <p>SNACK</p>
-    </div>
     <div class="col-sm-3">
-      <a href="prodotti.php?cat=Bibite">
-        <img src="img/Bibite.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
-      </a>
-        <p>BIBITE</p>
+        <a href="prodotti.php?cat=Frutta">
+          <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
+        </a>
+        <p>FRUTTA E VERDURA</p>
+      </div>
+    <div class="col-sm-3">
+        <a href="prodotti.php?cat=Snack">
+          <img src="img/snack.jpg" class="img-circle person" alt="Categoria"
+               width="255" height="255">
+        </a>
+        <p>SNACK</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="prodotti.php?cat=Bibite">
+          <img src="img/Bibite.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
+        </a>
+          <p>BIBITE</p>
+      </div>
+    <div class="col-sm-3">
+        <a href="prodotti.php?cat=Carni">
+          <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
+               width="255" height="255">
+        </a>
+        <p>CARNE</p>
+      </div>
     </div>
-  <div class="col-sm-3">
-      <a href="prodotti.php?cat=Carni">
-        <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
-             width="255" height="255">
-      </a>
-      <p>CARNE</p>
-  </div>
-
-  </div>
 </div>
 
 <!--PRODOTTI-->
-    <center><?php $categoria=$_GET['cat']; echo("<h1>$categoria</h1>"); ?></center>
-  <div id="band" class="container text-center">
-    <div class="row">
-      <?php
+
+    <div id="band" class="container text-center containercustom">
+      <div class="row">
+        <div class="col-sm-8">
+          <center><h1><?php $categoria=$_GET['cat']; echo("<h1>$categoria</h1>"); ?></h1></center>
+          <?php
         $result=categoria($categoria);
         while($row=mysqli_fetch_array($result))
         {
@@ -136,16 +138,70 @@
           // echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
         }
 
-      ?>
-
+      ?> 
+        </div>
+        <div class="col-sm-4 lista-spesa-container bordo">
+              <div id="lista-prodotti-titolo">
+                <center><h2>Lista Della Spesa</center></h2>
+              </div>
+              <div id="lista-prodotti-empty" class="card" style="display:none">
+                <center><h3>Seleziona Prodotti</center></h3>
+              </div>
+              <div id="lista-prodotti-container">
+                    <div class="card">
+                                  <table class="table table-hover shopping-cart-wrap">
+                                  <thead class="text-muted">
+                                  <tr>
+                                  <th scope="col">Prodotto</th>
+                                  <th scope="col" width="120">Quantità</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                  <td>
+                                  <figure class="media">
+                                  <figcaption class="media-body textalignleft">
+                                    <h6 class="title text-truncate">Product name goes here </h6>
+                                    <dl class="param param-inline small">
+                                      <dt>Categoria: </dt>
+                                      <dd>XXL</dd>
+                                    </dl>
+                                  </figcaption>
+                                  </figure>
+                                  </td>
+                                  <td>
+                                    <select class="form-control">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+                                      <option>8</option>
+                                      <option>9</option>
+                                      <option>10</option>
+                                    </select>
+                                  </td>
+                                  <td class="text-right">
+                                  <a href="" class="btn btn-outline-danger"> × Rimuovi</a>
+                                  </td>
+                                  </tr>
+                                  </tbody>
+                                  </table>
+                    </div> <!-- card.// -->
+                    <div id="buttoncheckout">
+                      <a href="Check-out.php" class="btn btn-outline-danger"> Cerca Offerta > </a>
+                    </div>
+            </div>
     </div>
-  </div>
+    </div>
 
 <!--PRODOTTI-->
 
 
 
-</div>
+
 <footer id="contact">
         <div class="container text-center">
                         <a href="https://github.com/robertogarau/alternanza_cagliari" class="social"><i class="fa fa-github"></i></a>
