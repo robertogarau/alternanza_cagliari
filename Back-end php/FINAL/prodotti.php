@@ -1,21 +1,20 @@
 <?php include 'functions.php';
     session_start();
-      $array=array();
-      $_SESSION['cart']=$array;
+      $_SESSION['id_lista']=1;
+      $id_lista=$_SESSION['id_lista'];
       if($_GET){
         if(isset($_POST['add'])){
             $value=$_POST['add'];
-            bt_add($value,$array);
+            add_to_list($id_lista,$value);
         }
-    }
-    function bt_add($id,$a){
-      array_push($a,$id);
-      $_SESSION['cart']=$a;
-      exit();
+        if(isset($_POST['remove'])){
+          $value2=$_POST['remove'];
+          remove_from_list($id_lista,$value2);
+      }
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <title>Prodotti | Market Express</title>
   <link href="img/shopcart.png" rel="shortcut icon"/> <!--miss shortcut icon titlebar-->
@@ -106,7 +105,7 @@
 <div id="band" class="container text-center">
   <div class="row">
     <div class="col-sm-3">
-        <a href="prodotti.php?cat=Frutta">
+        <a href="prodotti.php?cat=Frutta%20e%20Verdur">
           <img src="img/verdure.jpg" class="img-circle person" alt="Categoria" width="255" height="255">
         </a>
         <p>FRUTTA E VERDURA</p>
@@ -125,7 +124,7 @@
           <p>BIBITE</p>
       </div>
     <div class="col-sm-3">
-        <a href="prodotti.php?cat=Carni">
+        <a href="prodotti.php?cat=Carne">
           <img src="img/carni.jpg" class="img-circle person" alt="Categoria"
                width="255" height="255">
         </a>
@@ -150,17 +149,10 @@
           </a>
           <p>$row[1]</p>
           <p>$row[0]</p>
-          <form method=\"post\" action=\"\"> 
+          <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
           <button type=\"submit\" class=\"btn btn-primary\" name=\"add\" value=\"$row[0]\">Aggiungi</button>
           </form>
-          </div>");
-          // echo("$row[0] $row[1] $row[2] $row[3] $row[4] $row[5]");
-        }
-          
-      ?> 
-        <div class="col-sm-3">
-          <?php  echo("$array[0]");?>
-        </div>
+          </div>"); } ?> 
         </div>
         <div class="col-sm-4 lista-spesa-container bordo">
               <div id="lista-prodotti-titolo">
@@ -170,48 +162,56 @@
                 <center><h3>Seleziona Prodotti</center></h3>
               </div>
               <div id="lista-prodotti-container">
-                    <div class="card">
-                                  <table class="table table-hover shopping-cart-wrap">
-                                  <thead class="text-muted">
-                                  <tr>
-                                  <th scope="col">Prodotto</th>
-                                  <th scope="col" width="120">Quantità</th>
-                                  </tr>
-                                  </thead>
-                                  <tbody>
-                                  <tr>
-                                  <td>
-                                  <figure class="media">
-                                  <figcaption class="media-body textalignleft">
-                                    <h6 class="title text-truncate">Product name goes here </h6>
-                                    <dl class="param param-inline small">
-                                      <dt>Categoria: </dt>
-                                      <dd>XXL</dd>
-                                    </dl>
-                                  </figcaption>
-                                  </figure>
-                                  </td>
-                                  <td>
-                                    <select class="form-control">
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                      <option>6</option>
-                                      <option>7</option>
-                                      <option>8</option>
-                                      <option>9</option>
-                                      <option>10</option>
-                                    </select>
-                                  </td>
-                                  <td class="text-right">
-                                  <a href="" class="btn btn-outline-danger"> × Rimuovi</a>
-                                  </td>
-                                  </tr>
-                                  </tbody>
-                                  </table>
-                    </div> <!-- card.// -->
+                <?php      $result=view_list($id_lista);
+                        while($row=mysqli_fetch_array($result)){
+                          echo("<div class=\"card\">
+                          <table class=\"table table-hover shopping-cart-wrap\">
+                          <thead class=\"text-muted\">
+                          <tr>
+                          <th scope=\"col\">Prodotto</th>
+                          <th scope=\"col\" width=\"120\">Quantità</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                          <td>
+                          <figure class=\"media\">
+                          <figcaption class=\"media-body textalignleft\">
+                            <h6 class=\"title text-truncate\">$row[5]</h6>
+                            <dl class=\"param param-inline small\">
+                              <dt>Categoria: </dt>
+                              <dd>XXL</dd>
+                            </dl>
+                          </figcaption>
+                          </figure>
+                          </td>
+                          <td>
+                            <select class=\"form-control\">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </td>
+                          <td class=\"text-right\">
+                          <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
+                          <button type=\"submit\" class=\"btn btn-primary\" name=\"remove\" value=\"$row[4]\">Rimuovi</button>
+                          </form>
+                          <a href=\"prodotti.php?cat=Snack&fn=remove_from_list(1,$row[4])\" class=\"btn btn-outline-danger\"> × Rimuovi</a>
+                          </td>
+                          </tr>
+                          </tbody>
+                          </table>
+                  </div> ");} ?>   
+                    <div id="buttoncheckout">
+                      <a href="prodotti.php?cat=Snack&fn=view_list(1)" class="btn btn-outline-danger"> Aggiorna Lista </a>
+                    </div>
                     <div id="buttoncheckout">
                       <a href="Check-out.php" class="btn btn-outline-danger"> Cerca Offerta > </a>
                     </div>
@@ -220,16 +220,11 @@
     </div>
 
 <!--PRODOTTI-->
-
-
-
-
 <footer id="contact">
         <div class="container text-center">
                         <a href="https://github.com/robertogarau/alternanza_cagliari" class="social"><i class="fa fa-github"></i></a>
             </div>
 </footer>
-
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();

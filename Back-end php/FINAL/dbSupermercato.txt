@@ -1,0 +1,121 @@
+CREATE DATABASE Supermercato;
+
+CREATE TABLE Utenti(
+idUtente INTEGER NOT NULL,
+Nome VARCHAR(15) NOT NULL,
+Cognome VARCHAR(15) NOT NULL,
+Username VARCHAR(15) NOT NULL,
+Password VARCHAR(25) NOT NULL,
+DataNascita VARCHAR(15) NOT NULL,
+Indirizzo VARCHAR(35) NOT NULL,
+PRIMARY KEY (idUtente));
+
+CREATE TABLE Supermercati(
+idSupermercato INTEGER NOT NULL,
+Nome VARCHAR(30) NOT NULL,
+Indirizzo VARCHAR(30) NOT NULL,
+PRIMARY KEY (idSupermercato));
+
+CREATE TABLE Prodotti(
+idProdotto INTEGER NOT NULL,
+Nome VARCHAR(20) NOT NULL,
+Marca VARCHAR(15) NOT NULL,
+Categoria VARCHAR(15),
+PRIMARY KEY (idProdotto));
+
+CREATE TABLE Liste(
+idLista INTEGER NOT NULL AUTO_INCREMENT,
+N_Oggetti INTEGER NOT NULL,
+Prezzototale DECIMAL(3,2) NOT NULL,
+idUtente INTEGER NOT NULL,
+PRIMARY KEY (idLista),
+FOREIGN KEY (idUtente) REFERENCES Utenti(idUtente) ON DELETE CASCADE);
+
+CREATE TABLE ProdottiSupermercati(
+idProdSup INTEGER NOT NULL,
+Prezzo INTEGER NOT NULL,
+Quantita INTEGER NOT NULL,
+idProdotto INTEGER NOT NULL,
+idSupermercato INTEGER NOT NULL,
+PRIMARY KEY (idProdSup),
+FOREIGN KEY (idProdotto) REFERENCES Prodotti(idProdotto) ON DELETE CASCADE,
+FOREIGN KEY (idSupermercato) REFERENCES Supermercati(idSupermercato) ON DELETE CASCADE);
+
+CREATE TABLE ProdottiListe(
+idProdList INTEGER NOT NULL AUTO_INCREMENT,
+Quantita INTEGER NOT NULL,
+idProdotto INTEGER NOT NULL,
+idLista INTEGER NOT NULL,
+PRIMARY KEY (idProdList),
+FOREIGN KEY (idProdotto) REFERENCES Prodotti(idProdotto) ON DELETE CASCADE,
+FOREIGN KEY (idLista) REFERENCES Supermercati(idSupermercato) ON DELETE CASCADE);
+
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (1,'Maya','Ball','feugiat','mattis','Jan 16, 1973','South Burlington');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (2,'Maryam','Chambers','eget','arcu.','Oct 10, 2012','Coalville');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (3,'Pandora','Emerson','ligula.','hendrerit.','Jun 1, 1971','Cambridge');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (4,'Cheryl','Peck','aliquam','id','Nov 14, 1951','Bonlez');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (5,'Jelani','Hancock','urna,','massa.','Oct 24, 1979','Remagne');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (6,'Keefe','Davis','rutrum','Donec','Mar 3, 1992','Dallas');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (7,'Desiree','Weeks','auctor','natoque','Jun 2, 1991','LaSalle');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (8,'Kalia','Mccullough','sem','tempus','Nov 2, 1999','Quilpu�');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (9,'Elizabeth','Stephenson','dolor','est.','Aug 23, 2010','Sromness');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (10,'Amaya','Berg','justo.','vel','Dec 19, 1967','Amsterdam');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (11,'Naida','Strickland','non,','arcu.','Nov 22, 1971','Laval');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (12,'Isadora','Dillard','vel','Mauris','Dec 6, 2015','Cumberland County');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (13,'Evan','Tanner','mauris','sagittis','Dec 20, 1986','Hawick');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (14,'Oliver','Morton','risus.','vel,','Apr 9, 1965','Rijkevorsel');
+INSERT INTO Utenti (idUtente,Nome,Cognome,Username,Password,DataNascita,Indirizzo) VALUES (15,'Aaron','Porter','risus.','consectetuer','Mar 11, 1982','Mobile');
+
+
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (1,'SuperPan','Ap #647-7156 Hendrerit Avenue');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (2,'EuroSpin','9837 Velit Av.');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (3,'Conad','Ap #899-5554 Mauris Rd.');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (4,'Auchan','2157 Donec Street');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (5,'Pam','853-922 Nec Av.');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (6,'SuperPan','3718 Ut Road');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (7,'EuroSpin','P.O. Box 281, 6449 Ornare. Rd.');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (8,'Conad','530-3562 Est. St.');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (9,'Auchan','501-1423 Mauris Ave');
+INSERT INTO Supermercati (idSupermercato,Nome,Indirizzo) VALUES (10,'�Pam','223-1850 Non Ave');
+
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (1,'Pomodori','Orogel','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (2,'Arance','Valfrutta','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (3,'Zucchine','Orogel','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (4,'Uva','Valfrutta','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (5,'Pesche','Valfrutta','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (6,'Peperoni','Orogel','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (7,'Melanzane','Orogel','Frutta e Verdura');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (8,'Croccantelle','FornoDamiani','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (9,'PopCorn','Amica Chips','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (10,'Grissini','Mulino Bianco','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (11,'Kinder Brioss','Kinder','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (12,'Kinder Bueno','Kinder','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (13,'Taralli','Tre Mulini','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (14,'Pringles','Pringles','Snack');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (15,'Coca Cola','Coca Cola','Bibite');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (16,'Estathe','Ferrero','Bibite');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (17,'Aranciata','Guizza','Bibite');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (18,'Red bull','Red bull','Bibite');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (19,'Succo alla pesca','Santal','Bibite');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (20,'Pollo','Montana','Carne');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (21,'Manzo','Montana','Carne');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (22,'Cavallo','Montana','Carne');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (23,'Suino','Montana','Carne');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (24,'Cervo','Montana','Carne');
+INSERT INTO Prodotti (idProdotto,Nome,Marca,Categoria) VALUES (25,'Cinghiale','Montana','Carne');
+
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (1,7,2,1,1);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (2,1,5,2,2);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (3,4,1,3,3);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (4,3,5,4,4);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (5,1,4,5,5);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (6,10,3,6,6);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (7,7,2,7,7);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (8,5,3,8,8);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (9,2,1,9,9);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (10,3,5,10,10);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (11,3,5,11,4);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (12,2,4,12,5);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (13,2,4,13,9);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (14,3,1,14,1);
+INSERT INTO ProdottiSupermercati (idProdSup,Prezzo,Quantita,idProdotto,idSupermercato) VALUES (15,4,5,15,7);
