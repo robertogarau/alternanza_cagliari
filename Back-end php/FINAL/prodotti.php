@@ -10,7 +10,10 @@
         if(isset($_POST['remove'])){
           $value2=$_POST['remove'];
           remove_from_list($id_lista,$value2);
-      }
+        }
+        if(isset($_POST['update'])){
+          view_list($id_lista);
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -168,7 +171,7 @@
                           <table class=\"table table-hover shopping-cart-wrap\">
                           <thead class=\"text-muted\">
                           <tr>
-                          <th scope=\"col\">Prodotto</th>
+                          <th scope=\"col\">$row[5]</th>
                           <th scope=\"col\" width=\"120\">Quantità</th>
                           </tr>
                           </thead>
@@ -177,10 +180,10 @@
                           <td>
                           <figure class=\"media\">
                           <figcaption class=\"media-body textalignleft\">
-                            <h6 class=\"title text-truncate\">$row[5]</h6>
+                            <h6 class=\"title text-truncate\">$row[6]</h6>
                             <dl class=\"param param-inline small\">
                               <dt>Categoria: </dt>
-                              <dd>XXL</dd>
+                              <dd>$row[7]</dd>
                             </dl>
                           </figcaption>
                           </figure>
@@ -203,16 +206,15 @@
                           <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
                           <button type=\"submit\" class=\"btn btn-primary\" name=\"remove\" value=\"$row[4]\">Rimuovi</button>
                           </form>
-                          <a href=\"prodotti.php?cat=Snack&fn=remove_from_list(1,$row[4])\" class=\"btn btn-outline-danger\"> × Rimuovi</a>
                           </td>
                           </tr>
                           </tbody>
                           </table>
                   </div> ");} ?>   
                     <div id="buttoncheckout">
-                      <a href="prodotti.php?cat=Snack&fn=view_list(1)" class="btn btn-outline-danger"> Aggiorna Lista </a>
-                    </div>
-                    <div id="buttoncheckout">
+                    <form method="post" action="prodotti.php?cat=Snack"> 
+                          <button type="submit" class="btn btn-primary" name="update" value="$row[4]">Aggiorna Lista</button>
+                          </form>
                       <a href="Check-out.php" class="btn btn-outline-danger"> Cerca Offerta > </a>
                     </div>
             </div>

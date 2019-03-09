@@ -33,7 +33,7 @@ function remove_from_list($id_lista,$id_prodotto){
 }
 function view_list($id_lista){
     $connection=mysqli_connect("192.168.64.2","piero","password","Supermercato") or die("Connessione non riuscita!");
-    $query="SELECT * FROM ProdottiListe , Prodotti WHERE ProdottiListe.idProdotto=Prodotti.idProdotto AND ProdottiListe.idLista=1;";
+    $query="SELECT * FROM ProdottiListe , Prodotti WHERE ProdottiListe.idProdotto=Prodotti.idProdotto AND ProdottiListe.idLista=$id_lista;";
     $result=mysqli_query($connection,$query)or die("Query non riuscita!");
     mysqli_close($connection);
     return $result;
