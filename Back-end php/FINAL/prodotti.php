@@ -204,7 +204,7 @@
                           </td>
                           <td class=\"text-right\">
                           <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
-                          <button type=\"submit\" class=\"btn btn-primary\" name=\"remove\" value=\"$row[4]\">Rimuovi</button>
+                          <button type=\"submit\" class=\"btn btn-primary\" name=\"remove\" value=\"$row[0]\">Rimuovi</button>
                           </form>
                           </td>
                           </tr>

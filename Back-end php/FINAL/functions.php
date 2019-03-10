@@ -22,7 +22,7 @@ function add_to_list($id_lista,$id_prodotto){
     mysqli_close($connection);
     exit();
 }
-function remove_from_list($id_lista,$id_prodotto){
+function remove_from_list_2($id_lista,$id_prodotto){
     $connection=mysqli_connect("192.168.64.2","piero","password","Supermercato") or die("Connessione non riuscita!");
     $query_1="DELETE FROM ProdottiListe WHERE idProdotto=$id_prodotto";
     $result_1=mysqli_query($connection,$query_1)or die("Query non riuscita! (Errore 1-remove_from_list)");
@@ -38,7 +38,24 @@ function view_list($id_lista){
     mysqli_close($connection);
     return $result;
 }
+function view_list_shop($id_lista,$id_shop){
+    $connection=mysqli_connect("192.168.64.2","piero","password","Supermercato") or die("Connessione non riuscita!");
+    $query="SELECT * FROM ProdottiListe , Prodotti , ProdottiSupermercati WHERE ProdottiListe.idProdotto=Prodotti.idProdotto AND ProdottiSupermercati.idProdotto=Prodotti.idProdotto AND ProdottiListe.idLista=$id_lista;";
+    $result=mysqli_query($connection,$query)or die("Query non riuscita!");
+    mysqli_close($connection);
+    return $result;
 
+}
+
+function remove_from_list($id_lista,$id_prodottolista){
+    $connection=mysqli_connect("192.168.64.2","piero","password","Supermercato") or die("Connessione non riuscita!");
+    $query_1="DELETE FROM ProdottiListe WHERE idProdList=$id_prodottolista";
+    $result_1=mysqli_query($connection,$query_1)or die("Query non riuscita! (Errore 1-remove_from_list)");
+    $query_2="UPDATE Liste SET N_oggetti =  N_oggetti - 1 WHERE idLista=$id_lista;";
+    $result_2=mysqli_query($connection,$query_2)or die("Query non riuscita! (Errore 2-remove_from_list)");
+    mysqli_close($connection);
+    exit();
+}
 
 
 ?>

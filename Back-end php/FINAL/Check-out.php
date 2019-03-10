@@ -1,3 +1,4 @@
+<?php include 'functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +71,7 @@
         </div> 
   <br>
   <div id="list1" class="collapse">
+      <?php $temp=view_list(1);?>
       <h5><i class="glyphicon glyphicon-remove-circle red"></i> AaBbCc <div class="list"><?php echo $a=4.99 ?>€</div></h5> 
       <h5><i class="glyphicon glyphicon-ok-circle green"></i> AaBbCc <div class="list"><?php echo $b=2.50 ?>€</div></h5> 
       <h5><i class="glyphicon glyphicon-ok-circle green"></i> AaBbCc <div class="list"><?php echo $c=12.49 ?>€</div></h5> 
