@@ -152,10 +152,10 @@
           </a>
           <p>$row[1]</p>
           <p>$row[0]</p>
-          <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
+          <form method=\"post\" action=\"prodotti.php?cat=Snack\">
           <button type=\"submit\" class=\"btn btn-primary\" name=\"add\" value=\"$row[0]\">Aggiungi</button>
           </form>
-          </div>"); } ?> 
+          </div>"); } ?>
         </div>
         <div class="col-sm-4 lista-spesa-container bordo">
               <div id="lista-prodotti-titolo">
@@ -203,19 +203,19 @@
                             </select>
                           </td>
                           <td class=\"text-right\">
-                          <form method=\"post\" action=\"prodotti.php?cat=Snack\"> 
+                          <form method=\"post\" action=\"prodotti.php?cat=Snack\">
                           <button type=\"submit\" class=\"btn btn-primary\" name=\"remove\" value=\"$row[0]\">Rimuovi</button>
                           </form>
                           </td>
                           </tr>
                           </tbody>
                           </table>
-                  </div> ");} ?>   
+                  </div> ");} ?>
                     <div id="buttoncheckout">
-                    <form method="post" action="prodotti.php?cat=Snack"> 
+                    <form method="post" action="prodotti.php?cat=Snack">
                           <button type="submit" class="btn btn-primary" name="update" value="$row[4]">Aggiorna Lista</button>
+                          <a href="Check-out.php" class="btn btn-outline-danger"> Cerca Offerta > </a>
                           </form>
-                      <a href="Check-out.php" class="btn btn-outline-danger"> Cerca Offerta > </a>
                     </div>
             </div>
     </div>
